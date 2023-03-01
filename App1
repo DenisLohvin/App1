@@ -1,0 +1,134 @@
+import java.util.Scanner;
+
+public class App1 {
+
+
+    public static final Scanner scanner;
+
+    public App1() {
+    }
+
+    public static void main(String[] args) {
+        System.out.println(ifSumInScope());
+        checkNegativePositiveNumber();
+        System.out.println(ifNegativePositiveNumber());
+        printLineIndicatedQuantity();
+        System.out.println(ifLeapYear());
+        printThreeWords();
+        checkSumSign();
+        printColor();
+        compareNumbers();
+    }
+
+    private static void printThreeWords() {
+        System.out.println("Введіть три фрукти");
+        Scanner sc = new Scanner(System.in);
+        String firstFruit = sc.nextLine();
+        String secondFruit = sc.nextLine();
+        String thirdFruit = sc.nextLine();
+        System.out.printf("%s\n%s\n%s\n", firstFruit, secondFruit, thirdFruit);
+    }
+
+    private static void checkSumSign() {
+
+        Scanner k = new Scanner(System.in);
+        System.out.println("Введіть 2 будь-яких цілих числа: ");
+        int a = k.nextInt();
+        int b = k.nextInt();
+        System.out.print(a + b);
+        if (a + b > 0) {
+            System.out.println("Сума позитивна");
+        } else {
+            System.out.println("Сума негативна");
+        }
+
+    }
+
+    private static void printColor() {
+        new Scanner(System.in);
+        System.out.println("Введіть число,щоб обрати колір");
+        int r = scanner.nextInt();
+        if (r <= 0) {
+            System.out.println("Червоний");
+        } else if (r <= 100) {
+            System.out.println("Жовтий");
+        } else {
+            System.out.println("Зелений");
+        }
+
+    }
+
+    private static void compareNumbers() {
+        Scanner c = new Scanner(System.in);
+        System.out.println("Введіть число a");
+        int a = c.nextInt();
+        System.out.println("Введіть число b");
+        int b = c.nextInt();
+        if (a >= b) {
+            System.out.println("“a >= b”");
+        } else {
+            System.out.println("“a < b”");
+        }
+
+    }
+
+    private static boolean ifSumInScope() {
+        Scanner h = new Scanner(System.in);
+        System.out.println("Введіть число a");
+        int a = h.nextInt();
+        System.out.println("Введіть число b");
+        int b = h.nextInt();
+        int sum = a + b;
+        return sum > 10 && sum <= 20;
+    }
+
+    private static void checkNegativePositiveNumber() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введіть будь-яке число");
+        int number = scan.nextInt();
+        if (number < 0) {
+            System.out.println("Число від'ємне");
+        } else {
+            System.out.println("Число додатнє");
+        }
+
+    }
+
+    private static boolean ifNegativePositiveNumber() {
+        Scanner d = new Scanner(System.in);
+        System.out.println("Введіть будь-яке число");
+        int number = d.nextInt();
+        if (number < 0) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+        return false;
+    }
+
+    private static void printLineIndicatedQuantity() {
+        Scanner u = new Scanner(System.in);
+        System.out.println("Введіть слово");
+        String line = u.nextLine();
+        System.out.println("Введіть кількість");
+        int quantity = u.nextInt();
+        while (quantity > 0) {
+            System.out.println(line);
+            --quantity;
+        }
+
+    }
+
+    private static boolean ifLeapYear() {
+        Scanner t = new Scanner(System.in);
+        System.out.println("Введіть рік");
+        int year = t.nextInt();
+        return year % 400 == 0 || year % 4 == 0 && year % 100 != 0;
+    }
+
+    static {
+        scanner = new Scanner(System.in);
+
+    }
+}
+
